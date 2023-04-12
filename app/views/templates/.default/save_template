@@ -1,0 +1,57 @@
+<? // if (!defined('JOIN_CORE') || !JOIN_CORE) die(); ?>
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="app/views/templates/.default/style.css">
+    <meta charset="utf-8"/>
+</head>
+<body>
+<div class="main">
+    <form enctype="multipart/form-data" action="index.php" method="POST">
+        <h2 class="description">Сервис работы с документами Microsoft Word</h2>
+        <span class="mode">Выберите режим:</span>
+        <br>
+        <input type="radio" id="counter" name="mode" value="counter">
+        <label for="counter">Подсчет всех символов</label>
+        <br>
+        <input type="radio" id="highlighter" name="mode" value="highlighter">
+        <label for="highlighter">Выделение слов</label>
+
+
+        <h2>Загрузка файла (*.doc/docx)</h2>
+        <input type="hidden" name="MAX_FILE_SIZE" value="500000">
+        <input type='file' name='file-ms_word[]' class='file-drop' id='file-drop' multiple required>
+        <br>
+        <h2>Загрузка файла (*.txt)</h2>
+        <input type='file' name='file-txt[]' class='file-drop' id='file-drop' multiple required>
+        <br>
+        <br>
+        <span class="submit"> <input type='submit' class="btn-submit" value='SUBMIT'> </span>
+        <hr>
+    </form>
+
+
+    <div class="docs-count">
+        <h3> Количество загруженных документов: <span>< >
+        </span>
+        </h3>
+    </div>
+
+    <div class="not-valid">
+        <hr>
+        ERROR! Word-file isn't VALID. Allowed format: .DOC/.DOCX
+    </div>
+
+
+    <div class="message">
+        <hr>
+        <span class="doc-field">Имя документа: "< >"</span>
+        <br>
+        <span class="doc-field">Количество всех символов в документе : "< > "</span>
+        <hr>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "require": {
+    "phpoffice/phpword": "dev-master",
+    "ext-mbstring": "*"
+  }
+}
